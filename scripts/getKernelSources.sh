@@ -15,7 +15,7 @@ fi
 cd "$SOURCE_TARGET"
 echo "$PWD"
 
-wget -N https://developer.nvidia.com/embedded/dlc/r32-3-1_Release_v1.0/Sources/T186/public_sources.tbz2
+wget -N https://developer.nvidia.com/embedded/L4T/r32_Release_v5.0/sources/T186/public_sources.tbz2
 # l4t-sources is a tbz2 file
 tar -xvf public_sources.tbz2  Linux_for_Tegra/source/public/kernel_src.tbz2 --strip-components=3
 tar -xvf kernel_src.tbz2
@@ -31,7 +31,7 @@ KERNEL_VERSION=$(uname -r)
 # For L4T 32.3 the kernel is 4.9.140-tegra ; 
 # Everything after '4.9.140' is the local version
 # This removes the suffix
-LOCAL_VERSION=${KERNEL_VERSION#$"4.9.140"}
+LOCAL_VERSION=${KERNEL_VERSION#$"4.9.201"}
 # Should be "-tegra"
 bash scripts/config --file .config \
 	--set-str LOCALVERSION $LOCAL_VERSION
